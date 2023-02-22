@@ -1,6 +1,7 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components/native";
+import { initializeApp } from "firebase/app";
 
 import {
   useFonts as useOswald,
@@ -14,6 +15,17 @@ import { Navigation } from "./src/infrastructure/navigation";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBKMpcKXXg8S5jRPQEulvgGJuuO2N1BcB8",
+  authDomain: "mealstogo-fd898.firebaseapp.com",
+  projectId: "mealstogo-fd898",
+  storageBucket: "mealstogo-fd898.appspot.com",
+  messagingSenderId: "679899822294",
+  appId: "1:679899822294:web:b1522c3abe4b05e1ee3177",
+};
+
+initializeApp(firebaseConfig);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
