@@ -30,7 +30,7 @@ export const MapScreen = ({ navigation }) => {
 
   return (
     <>
-      <Search />
+      <Search style={{ backgroundColor: "#62c8e3" }} />
       <Map
         region={{
           latitude: lat,

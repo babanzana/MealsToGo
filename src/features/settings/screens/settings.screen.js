@@ -12,10 +12,11 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 
 const SettingsItem = styled(List.Item)`
-  padding: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.space[2]};
 `;
 const AvatarContainer = styled.View`
   align-items: center;
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const SettingsScreen = ({ navigation }) => {
@@ -34,7 +35,7 @@ export const SettingsScreen = ({ navigation }) => {
   );
 
   return (
-    <SafeArea>
+    <SafeArea style={{ backgroundColor: "#62c8e3" }}>
       <AvatarContainer>
         <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
           {!photo && (
@@ -59,11 +60,20 @@ export const SettingsScreen = ({ navigation }) => {
           description="View your favourites"
           left={(props) => <List.Icon {...props} color="black" icon="heart" />}
           onPress={() => navigation.navigate("Favourites")}
+          style={{ backgroundColor: "#2222", borderWidth: 1 }}
+        />
+        <SettingsItem
+          title="Makanan"
+          description="View your makanan"
+          left={(props) => <List.Icon {...props} color="black" icon="heart" />}
+          onPress={() => navigation.navigate("Favourites")}
+          style={{ backgroundColor: "#2222", borderWidth: 1 }}
         />
         <SettingsItem
           title="Logout"
           left={(props) => <List.Icon {...props} color="black" icon="door" />}
           onPress={onLogout}
+          style={{ backgroundColor: "#2222", borderWidth: 1 }}
         />
       </List.Section>
     </SafeArea>

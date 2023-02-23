@@ -19,7 +19,7 @@ export const FavouritesScreen = ({ navigation }) => {
   const { favourites } = useContext(FavouritesContext);
 
   return favourites.length ? (
-    <SafeArea>
+    <SafeArea style={{ backgroundColor: "#62c8e3" }}>
       <RestaurantList
         data={favourites}
         renderItem={({ item }) => {

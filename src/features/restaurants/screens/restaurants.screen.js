@@ -30,7 +30,7 @@ export const RestaurantsScreen = ({ navigation }) => {
   const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
   return (
-    <SafeArea>
+    <SafeArea style={{ backgroundColor: "#62c8e3" }}>
       {isLoading && (
         <LoadingContainer>
           <Loading size={50} animating={true} color={MD2Colors.blue300} />
